@@ -3,7 +3,7 @@ from scipy.io import wavfile
 import numpy as np
 import matplotlib.pyplot as plt
 
-orate,data = wavfile.read('kn.wav')
+orate,data = wavfile.read('yly1.wav')
 print(orate,data)
 
 print(len(data))
