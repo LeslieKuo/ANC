@@ -20,15 +20,17 @@ csame = np.correlate(a, b, "same")
 ref = np.argmax(csame)
 print(ref)
 half_len = len(a) // 2
+
+print(len(a),half_len)
 d = abs(ref - half_len)
 print(d)
 a, b = data1, data2
 if ref < half_len :
-    a = a[:len(a)-d-1]
+    a = a[:len(a)-d-2]
     b = b[d:]
 else:
-    b = b[:len(a)-d-1]
-    a = a[d:]
+    b = b[:len(a)-d-2]
+    a = a[d+1:]
 
 
 wavfile.write("t1.wav", orate1, a)
